@@ -38,15 +38,26 @@ public class WhatsAppController : ControllerBase
     }
     
     /// <summary>
-    /// Lista todos as mensagens de um determinado evento
+    /// Lista todos as mensagens de WhatsApp de um determinado evento
     /// </summary>
-    /// <returns>Todas as mensagens do evento</returns>
+    /// <returns>Todas as mensagens de WhatsApp do evento</returns>
     /// <response code="200">Retorna todas as mensagens de um evento</response>
     [SwaggerResponse(StatusCodes.Status200OK, "Success", typeof(IList<WhatsAppDto>))]
-    [HttpGet("event/{eventId:int}")]
-    public async Task<IActionResult> GetEmailsByEvent(int eventId)
+    [HttpGet("events/{eventId:int}")]
+    public async Task<IActionResult> GetWpMessagesByEvent(int eventId)
     {
         var eventWpMessages = await _wpService.GetWpMessagesByEventAsync(eventId);
         return Ok(eventWpMessages);
+    }
+    
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var isDeleted = await _wpService.DeleteWpMessageAsync(id);
+        if (!isDeleted)
+        {
+            return NotFound();
+        }
+        return Ok();
     }
 }

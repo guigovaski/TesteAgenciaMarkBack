@@ -39,15 +39,15 @@ public class MessageService : IMessageService
         var wpMessages  = response?.WhatsApps.ToList();
 
         var emailsMapped = new List<EmailDto>();
-        var wpMessagesMapped = new List<WhatsAppDto>();
+        var wpMessagesMapped = new List<WhatsAppResponseDto>();
         
         foreach (var message in emails)
         {
             emailsMapped.Add(new EmailDto { EventId = message.EventId, Message = message.Message, Author = message.Author, Receiver = message.Receiver, Subject = message.Subject });
         }
-        foreach (var message in eventWpMessages)
+        foreach (var message in wpMessages)
         {
-            wpMessagesMapped.Add(new WhatsAppDto { EventId = message.EventId, Message = message.Message, AuthorPhoneNumber = message.AuthorPhoneNumber, ReceiverPhoneNumber = message.ReceiverPhoneNumber });
+            wpMessagesMapped.Add(new WhatsAppResponseDto { Id = message.WhatsAppId, EventId = message.EventId, Message = message.Message, AuthorPhoneNumber = message.AuthorPhoneNumber, ReceiverPhoneNumber = message.ReceiverPhoneNumber });
         }
         
         return new MessageResponseDto() { Emails = emailsMapped, WhatsApps = wpMessagesMapped, Id = response.EventId, Name = response.Name };

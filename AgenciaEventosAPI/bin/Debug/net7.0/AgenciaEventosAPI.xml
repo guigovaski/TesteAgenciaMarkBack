@@ -18,11 +18,11 @@
             <returns>Retorna todas as mensagens de um evento, incluindo WhatsApp e E-mail</returns>
             <response code="200">Retorna todas as mensagens de um evento, incluindo WhatsApp e E-mail</response>
         </member>
-        <member name="M:AgenciaEventosAPI.Controllers.WhatsAppController.GetEmailsByEvent(System.Int32)">
+        <member name="M:AgenciaEventosAPI.Controllers.WhatsAppController.GetWpMessagesByEvent(System.Int32)">
             <summary>
-            Lista todos as mensagens de um determinado evento
+            Lista todos as mensagens de WhatsApp de um determinado evento
             </summary>
-            <returns>Todas as mensagens do evento</returns>
+            <returns>Todas as mensagens de WhatsApp do evento</returns>
             <response code="200">Retorna todas as mensagens de um evento</response>
         </member>
         <member name="T:AgenciaEventosAPI.Migrations.InitialMigration">
@@ -47,6 +47,18 @@
             <inheritdoc />
         </member>
         <member name="M:AgenciaEventosAPI.Migrations.AddWhatsAppTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AgenciaEventosAPI.Migrations.AddFieldsToEventTable">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.AddFieldsToEventTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.AddFieldsToEventTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.AddFieldsToEventTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

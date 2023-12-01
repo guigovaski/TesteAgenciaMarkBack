@@ -4,10 +4,13 @@ namespace AgenciaEventosAPI.DTOs;
 
 public class EventDto
 {
-    [Required]
     public int Id { get; set; }
     
     [StringLength(255)]
-    [Required]
     public string Name { get; set; }
+    
+    [StringLength(255)]
+    public string? Description { get; set; }
+    
+    public DateTime Date { get; set; }
 }

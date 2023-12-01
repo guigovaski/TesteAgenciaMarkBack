@@ -21,7 +21,9 @@ public class EventService : IEventService
         {
             var eventMapped = new Event
             {
-                Name = eventDto.Name
+                Name = eventDto.Name,
+                Description = eventDto.Description,
+                Date = eventDto.Date
             };
             _dbContext.Events.Add(eventMapped);
             await _dbContext.SaveChangesAsync();
@@ -45,7 +47,7 @@ public class EventService : IEventService
     public async Task<IList<EventDto>> GetEventsAsync()
     {
         var events = await _dbContext.Events.ToListAsync();
-        var eventsMapped = events.Select(ev => new EventDto { Name = ev.Name, Id = ev.EventId }).ToList();
+        var eventsMapped = events.Select(ev => new EventDto { Name = ev.Name, Id = ev.EventId, Date = ev.Date, Description = ev.Description }).ToList();
         return eventsMapped;
     }
 
@@ -55,6 +57,8 @@ public class EventService : IEventService
         ArgumentNullException.ThrowIfNull(ev);
         
         ev.Name = eventDto.Name;
+        ev.Description = eventDto.Description;
+        ev.Date = eventDto.Date;
         
         _dbContext.Events.Update(ev);
         await _dbContext.SaveChangesAsync();

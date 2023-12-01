@@ -13,9 +13,9 @@ public class AppDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Event>().HasData(
-            new Event() { EventId = 1, Name = "Evento 1" },
-            new Event() { EventId = 2, Name = "Evento 2" },
-            new Event() { EventId = 3, Name = "Evento 3" }
+            new Event() { EventId = 1, Name = "Evento 1", Description = "Descrição do evento 1", Date = DateTime.Now.AddDays(1) },
+            new Event() { EventId = 2, Name = "Evento 2", Description = "Descrição do evento 2", Date = DateTime.Now.AddDays(2) },
+            new Event() { EventId = 3, Name = "Evento 3", Description = "Descrição do evento 3", Date = DateTime.Now.AddDays(3) }
         );
         
         modelBuilder.Entity<Email>().HasData(

@@ -26,4 +26,17 @@ public class WhatsAppService : IWhatsAppService
         var eventWpMessages = await _dbContext.WhatsApps.Where(wp => wp.EventId == eventId).ToListAsync();
         return eventWpMessages;
     }
+    
+    public async Task<bool> DeleteWpMessageAsync(int id)
+    {
+        var eventWpMessages = await _dbContext.WhatsApps.FirstOrDefaultAsync(wp => wp.WhatsAppId == id);
+
+        if (eventWpMessages is null)
+        {
+            return false;
+        }
+        _dbContext.WhatsApps.Remove(eventWpMessages);
+        await _dbContext.SaveChangesAsync();
+        return true;
+    }
 }

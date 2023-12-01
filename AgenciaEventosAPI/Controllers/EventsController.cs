@@ -73,13 +73,11 @@ public class EventsController : ControllerBase
     public async Task<IActionResult> Delete(int id)
     {
         var isDeleted = await _eventService.DeleteEventAsync(id);
-        if (isDeleted)
-        {
-            return Ok();
-        }
-        else
+        if (!isDeleted)
         {
             return NotFound("Producer not found");
         }
+
+        return Ok();
     }
 }
