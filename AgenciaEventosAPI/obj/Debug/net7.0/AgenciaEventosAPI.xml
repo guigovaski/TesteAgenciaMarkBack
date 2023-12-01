@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AgenciaEventosAPI</name>
+    </assembly>
+    <members>
+        <member name="M:AgenciaEventosAPI.Controllers.EmailsController.GetEmailsByEvent(System.Int32)">
+            <summary>
+            Lista todos os e-mails de um determinado evento
+            </summary>
+            <returns>Os itens da To-do list</returns>
+            <response code="200">Retorna todos os e-mails de um evento</response>
+        </member>
+        <member name="M:AgenciaEventosAPI.Controllers.MessagesController.GetMessagesByEvent(System.Int32)">
+            <summary>
+            Lista todas as mensagens de um evento, incluindo WhatsApp e E-mail
+            </summary>
+            <returns>Retorna todas as mensagens de um evento, incluindo WhatsApp e E-mail</returns>
+            <response code="200">Retorna todas as mensagens de um evento, incluindo WhatsApp e E-mail</response>
+        </member>
+        <member name="M:AgenciaEventosAPI.Controllers.WhatsAppController.GetEmailsByEvent(System.Int32)">
+            <summary>
+            Lista todos as mensagens de um determinado evento
+            </summary>
+            <returns>Todas as mensagens do evento</returns>
+            <response code="200">Retorna todas as mensagens de um evento</response>
+        </member>
+        <member name="T:AgenciaEventosAPI.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:AgenciaEventosAPI.Migrations.AddWhatsAppTable">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.AddWhatsAppTable.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.AddWhatsAppTable.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:AgenciaEventosAPI.Migrations.AddWhatsAppTable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

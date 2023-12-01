@@ -1,0 +1,23 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  agenciaeventosapi:
+    build:
+      context: "D:\\guilh\\Projetos\\AgenciaEventos"
+      dockerfile: "AgenciaEventosAPI/Dockerfile"
+      target: "build"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/AgenciaEventosAPI.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+      NUGET_PACKAGES: "C:\\Users\\guilh\\.nuget\\packages"
+      NUGET_FALLBACK_PACKAGES: "C:\\Users\\guilh\\.nuget\\packages"
+    image: "agenciaeventosapi:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\guilh\\.nuget\\packages:/root/.nuget/fallbackpackages"
+    - "D:\\guilh\\Projetos\\AgenciaEventos\\AgenciaEventosAPI:/app:rw"
+    - "D:\\guilh\\Projetos\\AgenciaEventos:/src:rw"
+    working_dir: "/app"
